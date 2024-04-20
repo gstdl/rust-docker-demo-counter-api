@@ -1,6 +1,6 @@
 # Base image
 FROM rust:1.77.2-alpine3.18
-# Working directory
+# Set working directory
 WORKDIR /app
 # Copy application code and dependencies
 COPY . .
