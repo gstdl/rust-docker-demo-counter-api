@@ -14,5 +14,7 @@ Cargo.lock
 *.pdb
 
 .vscode
+.gitignore
+README.md
 
 config.yaml
