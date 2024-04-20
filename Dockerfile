@@ -6,4 +6,10 @@ COPY . .
 RUN apk add --no-cache musl-dev
 RUN cargo install --path .
 
-CMD [ "/usr/local/cargo/bin/rust-rocket-counter-api" ]
+# FROM alpine:3.18
+FROM scratch
+
+WORKDIR /app/bin
+COPY --from=builder /usr/local/cargo/bin/rust-rocket-counter-api  /app/bin/app
+
+CMD [ "./app" ]
