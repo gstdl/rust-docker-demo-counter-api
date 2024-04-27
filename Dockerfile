@@ -15,5 +15,10 @@ FROM scratch
 WORKDIR /app/bin
 # Copy the application binary
 COPY --from=builder /usr/local/cargo/bin/rust-rocket-counter-api  /app/bin/app
+# Copy config.yaml
+COPY config.yaml /app/config.yaml
+# Set environment variables
+ENV CONFIG_PATH /app/config.yaml
+ENV ROCKET_ADDRESS 0.0.0.0
 # Run the binary
 CMD [ "./app" ]
