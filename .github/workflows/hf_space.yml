@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://gstdl:$HF_TOKEN@huggingface.co/spaces/gstdl/rust-docker-demo-counter-api main
+        run: git commit -am "sync from github" && git push https://gstdl:$HF_TOKEN@huggingface.co/spaces/gstdl/rust-docker-demo-counter-api main
