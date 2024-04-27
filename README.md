@@ -1,7 +1,7 @@
 ---
 title: simple counter api
 emoji: 💯
-colorFrom: orange
+colorFrom: red
 colorTo: blue
 sdk: docker
 app_port: 8000
