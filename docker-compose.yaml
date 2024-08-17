@@ -1,0 +1,16 @@
+version: "3.0"
+
+services:
+  api:
+    container_name: counter_rocket
+    image: counter_rocket
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "$PWD/config.yaml:/app/config.yaml"
+    environment:
+      - CONFIG_PATH=/app/config.yaml
+      - ROCKET_ADDRESS=0.0.0.0
+    ports:
+      - 8000:8000
