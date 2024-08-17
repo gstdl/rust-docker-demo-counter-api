@@ -8,5 +8,7 @@ COPY . .
 RUN apk add --no-cache musl-dev
 # Build the application
 RUN cargo install --path .
+# Set environment variable ROCKET_ADDRESS
+ENV ROCKET_ADDRESS 0.0.0.0
 # Run the application
 CMD [ "/usr/local/cargo/bin/rust-rocket-counter-api" ]
